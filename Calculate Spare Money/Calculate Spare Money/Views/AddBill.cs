@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Data.SqlClient;
+using Calculate_Spare_Money.Models;
 
 namespace Calculate_Spare_Money
 {
@@ -72,7 +73,7 @@ namespace Calculate_Spare_Money
 
             if (!error)
             {
-                using (SqlConnection conn = new SqlConnection(Main.CSTR))
+                using (SqlConnection conn = new SqlConnection(SQLFetch.connectionString))
                 {
                     conn.Open();
 

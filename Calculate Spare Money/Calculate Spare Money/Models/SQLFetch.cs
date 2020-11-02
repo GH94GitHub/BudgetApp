@@ -12,7 +12,7 @@ namespace Calculate_Spare_Money.Models
 {
     class SQLFetch
     {
-
+        //Variables
         public const string connectionString = "server=(local)\\SQLEXPRESS01;database=Bills;Integrated Security=SSPI;";
         private SqlCommand _sqlCommand;        
 
@@ -20,16 +20,20 @@ namespace Calculate_Spare_Money.Models
         {
 
         }
+
+        // Constructor that sets the sql command query
         public SQLFetch(string sqlCommand)
         {
             _sqlCommand = new SqlCommand(sqlCommand);
         }
 
+        // Method that sets the sql command query string
         public void setSqlCommand(string sqlCommand)
         {
-            _sqlCommand = new SqlCommand(sqlCommand); ;
+            _sqlCommand = new SqlCommand(sqlCommand);
         }
 
+        // Method that adds a parameter to the sql command query string
         public void setParameter(string paramReference, SqlDbType sqlDbType, string value)
         {
             _sqlCommand.Parameters.Add(paramReference, sqlDbType).Value = value;
